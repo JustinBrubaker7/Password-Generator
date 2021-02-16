@@ -24,15 +24,44 @@ function generatePassword() {
   passwordLength();
 
   var passcode = "";
-  var values = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_";
+  var lowerCase = "abcdefghijkmnpqrstuvwxyz";
+  var upperCase = "ABCDEFGHJKMNPQRSTUVWXYZ";
+  var numbers = " 123456789";
+  var symbols = "!@#$%^&*()_";
+
+  ifUpperCase = confirm("Uppercase?");
+  ifNumbers = confirm("You want numbers?");
+  ifSymbols = confirm("You want symbols?");
 
 
 
   for (var i = 0; i <= length; i++) {
-    var random = Math.floor(Math.random() * values.length);
-    passcode += values.charAt(random);
+    if(ifUpperCase && !ifNumbers && !ifSymbols){
+      var randomUpper = Math.floor(Math.random() * upperCase.length);
+      var random = Math.floor(Math.random() * lowerCase.length);
+      passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random));
+      passcode = passcode.substring(0, length);
+
+    } else if(ifUpperCase && ifNumbers && !ifSymbols){
+      var randomUpper = Math.floor(Math.random() * upperCase.length);
+      var random = Math.floor(Math.random() * lowerCase.length);
+      var randomNum = Math.floor(Math.random() * numbers.length);
+      passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random)).concat(numbers.charAt(randomNum));
+      passcode = passcode.substring(0, length);
+
+    } else if(ifUpperCase && ifNumbers && ifSymbols){
+      var randomUpper = Math.floor(Math.random() * upperCase.length);
+      var random = Math.floor(Math.random() * lowerCase.length);
+      var randomNum = Math.floor(Math.random() * numbers.length);
+      var randomSymbol = Math.floor(Math.random() * symbols.length);
+      passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random)).concat(numbers.charAt(randomNum)).concat(symbols.charAt(randomSymbol));
+      passcode = passcode.substring(0, length);
+    }
+    else {
+      var random = Math.floor(Math.random() * lowerCase.length);
+      passcode += lowerCase.charAt(random);
+    }
 
   }
 return passcode;
-
 }
