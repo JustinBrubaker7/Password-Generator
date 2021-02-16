@@ -35,30 +35,41 @@ function generatePassword() {
 
 
 
+
+
   for (var i = 0; i <= length; i++) {
+
+    var random = Math.floor(Math.random() * lowerCase.length),
+        randomNum = Math.floor(Math.random() * numbers.length),
+        randomSymbol = Math.floor(Math.random() * symbols.length),
+        randomUpper = Math.floor(Math.random() * upperCase.length);
+
     if(ifUpperCase && !ifNumbers && !ifSymbols){
-      var randomUpper = Math.floor(Math.random() * upperCase.length);
-      var random = Math.floor(Math.random() * lowerCase.length);
       passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random));
       passcode = passcode.substring(0, length);
 
     } else if(ifUpperCase && ifNumbers && !ifSymbols){
-      var randomUpper = Math.floor(Math.random() * upperCase.length);
-      var random = Math.floor(Math.random() * lowerCase.length);
-      var randomNum = Math.floor(Math.random() * numbers.length);
       passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random)).concat(numbers.charAt(randomNum));
       passcode = passcode.substring(0, length);
 
     } else if(ifUpperCase && ifNumbers && ifSymbols){
-      var randomUpper = Math.floor(Math.random() * upperCase.length);
-      var random = Math.floor(Math.random() * lowerCase.length);
-      var randomNum = Math.floor(Math.random() * numbers.length);
-      var randomSymbol = Math.floor(Math.random() * symbols.length);
       passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random)).concat(numbers.charAt(randomNum)).concat(symbols.charAt(randomSymbol));
       passcode = passcode.substring(0, length);
-    }
-    else {
-      var random = Math.floor(Math.random() * lowerCase.length);
+
+    } else if(!ifUpperCase && ifNumbers && ifSymbols){
+      passcode += (lowerCase.charAt(random)).concat(numbers.charAt(randomNum)).concat(symbols.charAt(randomSymbol));
+      passcode = passcode.substring(0, length);
+
+    } else if(!ifUpperCase && !ifNumbers && ifSymbols){
+      passcode += (lowerCase.charAt(random)).concat(symbols.charAt(randomSymbol));
+      passcode = passcode.substring(0, length);
+    } else if(!ifUpperCase && ifNumbers && !ifSymbols){
+      passcode += (lowerCase.charAt(random)).concat(numbers.charAt(randomNum));
+      passcode = passcode.substring(0, length);
+    } else if(ifUpperCase && !ifNumbers && ifSymbols){
+      passcode += upperCase.charAt(randomUpper).concat(lowerCase.charAt(random)).concat(symbols.charAt(randomSymbol));
+      passcode = passcode.substring(0, length);
+    } else {
       passcode += lowerCase.charAt(random);
     }
 
