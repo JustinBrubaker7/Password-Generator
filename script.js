@@ -1,3 +1,32 @@
+
+/**********************************************************************************************
+ * 
+ * 
+ * In script1.js this was my first attempt
+ * In script2.js this was my second attemt after talking with Mr.Farish
+ * 
+ * 
+ * 
+ * 
+ * 
+ * **************************************************************************************
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -26,7 +55,7 @@ function generatePassword() {
   var passcode = "";
   var lowerCase = "abcdefghijkmnpqrstuvwxyz";
   var upperCase = "ABCDEFGHJKMNPQRSTUVWXYZ";
-  var numbers = " 123456789";
+  var numbers = " 1234567890";
   var symbols = "!@#$%^&*()_";
 
   ifUpperCase = confirm("Uppercase?");
