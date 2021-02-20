@@ -41,10 +41,7 @@ function generatePassword() {
     //promts for input 
     // var length = prompt("How many charters you want?");
     lengthCall();
-    // var ifLowerCase = confirm("Lowercase?");
-    // var ifUpperCase = confirm("Uppercase?");
-    // var ifNumbers = confirm("You want numbers?");
-    // var ifSymbols = confirm("You want symbols?");
+
 
     var isLowerCase = document.getElementById("lowerCase");
     var isUpperCase = document.getElementById("upperCase");
