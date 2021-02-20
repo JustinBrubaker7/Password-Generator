@@ -24,7 +24,10 @@ function lengthCall(){
     length = prompt("How many charters you want? Must be more than 8 characters and less than 128");
     if(length < 8 || length > 128){
         alert("must be great than 8 and less than 128 characters");
-    } 
+
+    } else{
+        
+    }
     return length;
 }
 
