@@ -21,7 +21,7 @@ generateBtn.addEventListener("click", writePassword);
 //my code start
 
 function lengthCall(){
-    length = prompt("How many charters you want? Must be more than 8 characters and less than 128");
+    length = prompt("How many charters you want? \r\nMIN 8 characters \r\nMAX 128 characters");
     while(length < 8 || length > 128){
         alert("must be great than 8 and less than 128 characters");
     } 
