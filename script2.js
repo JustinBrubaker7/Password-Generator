@@ -96,3 +96,16 @@ function generatePassword() {
 
     return thePassword;
 }
+
+
+//copy to clipboard function
+
+function copyToCLip() {
+    var copyText = document.getElementById("password");
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+  
+    document.execCommand("copy");
+}
