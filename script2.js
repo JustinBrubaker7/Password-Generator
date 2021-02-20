@@ -22,13 +22,9 @@ generateBtn.addEventListener("click", writePassword);
 
 function lengthCall(){
     length = prompt("How many charters you want? Must be more than 8 characters and less than 128");
-    if(length < 8 || length > 128){
+    while(length < 8 || length > 128){
         alert("must be great than 8 and less than 128 characters");
-
-    } else{
-        
-    }
-    return length;
+    } 
 }
 
 //Genrate password function
@@ -45,12 +41,22 @@ function generatePassword() {
     //promts for input 
     // var length = prompt("How many charters you want?");
     lengthCall();
-    var ifLowerCase = confirm("Lowercase?");
-    var ifUpperCase = confirm("Uppercase?");
-    var ifNumbers = confirm("You want numbers?");
-    var ifSymbols = confirm("You want symbols?");
+    // var ifLowerCase = confirm("Lowercase?");
+    // var ifUpperCase = confirm("Uppercase?");
+    // var ifNumbers = confirm("You want numbers?");
+    // var ifSymbols = confirm("You want symbols?");
 
+    var isLowerCase = document.getElementById("lowerCase");
+    var isUpperCase = document.getElementById("upperCase");
+    var isNumbers = document.getElementById("numbers");
+    var isSymbols = document.getElementById("symbols");
 
+    var ifLowerCase = isLowerCase.checked;
+    var ifUpperCase = isUpperCase.checked;
+    var ifNumbers = isNumbers.checked;
+    var ifSymbols = isSymbols.checked;
+
+console.log(ifLowerCase);
 
     //if Lowercase is selected it will generate random character and push the rest of the array to "possibePasscode" array
     if (ifLowerCase) {

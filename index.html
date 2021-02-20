@@ -24,7 +24,19 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+            <form id="form1">
+              <input class="labels" type="checkbox" id="lowerCase" name="Lowercase" value="Lowercase" checked>
+              <label for="lowerCase">LowerCase</label><br>
 
+              <input class="labels" type="checkbox" id="upperCase" name="upperCase" value="upperCase" checked>
+              <label for="upperCase">Uppercse</label><br>
+
+              <input class="labels" type="checkbox" id="numbers" name="numbers" value="numbers">
+              <label for="numbers">Numbers</label><br>
+
+              <input class="labels" type="checkbox" id="symbols" name="symbols" value="symbols">
+              <label for="symbols">Symbols</label><br>
+            </form>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
