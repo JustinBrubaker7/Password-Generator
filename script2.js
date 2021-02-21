@@ -40,7 +40,6 @@ function generatePassword() {
     var possiblePasscode = [];
 
     //promts for input 
-    // var length = prompt("How many charters you want?");
     lengthCall();
 
 
